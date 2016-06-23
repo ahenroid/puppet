@@ -73,6 +73,7 @@ Puppet::Type.type(:service).provide :systemd, :parent => :base do
   def enabled?
     output = cached_enabled?
     code = $CHILD_STATUS.exitstatus
+    Puppet.notice("FOO")
 
     # The masked state is equivalent to the disabled state in terms of
     # comparison so we only care to check if it is masked if we want to keep
